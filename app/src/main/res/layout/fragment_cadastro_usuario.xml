@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".CadastroUsuarioFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cadastro_restaurante_nome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Nome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_cadastro_usuario_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cadastro_usuario_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_height"
+            android:layout_marginTop="16dp"
+            android:hint="E-mail"
+            app:layout_constraintEnd_toEndOf="@id/til_cadastro_restaurante_nome"
+            app:layout_constraintStart_toStartOf="@id/til_cadastro_restaurante_nome"
+            app:layout_constraintTop_toBottomOf="@id/til_cadastro_restaurante_nome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_cadastro_usuario_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_cadastro_usuario_senha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_height"
+            android:layout_marginTop="16dp"
+            android:hint="Senha"
+            app:layout_constraintEnd_toEndOf="@id/til_cadastro_usuario_email"
+            app:layout_constraintStart_toStartOf="@id/til_cadastro_usuario_email"
+            app:layout_constraintTop_toBottomOf="@id/til_cadastro_usuario_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_cadastro_usuario_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_cadastro_usuario_confirmar_senha"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/edit_height"
+        android:layout_marginTop="16dp"
+        android:hint="Confirmar senha"
+        app:layout_constraintEnd_toEndOf="@id/til_cadastro_usuario_senha"
+        app:layout_constraintStart_toStartOf="@id/til_cadastro_usuario_senha"
+        app:layout_constraintTop_toBottomOf="@id/til_cadastro_usuario_senha">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_cadastro_usuario_confirmar_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:textColor="@color/black" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_cadastro_usuarion_entrar"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="0dp"
+            android:layout_marginTop="24dp"
+            android:layout_height="@dimen/button_height"
+            android:text="Cadastrar"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:iconGravity="end"
+            app:layout_constraintEnd_toEndOf="@id/til_cadastro_usuario_confirmar_senha"
+            app:layout_constraintStart_toStartOf="@id/til_cadastro_usuario_confirmar_senha"
+            app:layout_constraintTop_toBottomOf="@id/til_cadastro_usuario_confirmar_senha"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

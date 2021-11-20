@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_login_30h"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_login_40h"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/img_login_background"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            android:scaleType="centerCrop"-->
+        <!--            android:src="@drawable/login_bg"-->
+        <!--            android:foreground="@drawable/img_alpha_mask"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/guide_40h"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:foreground="@drawable/img_alpha_mask"
+            app:layout_constraintBottom_toTopOf="@id/guide_login_40h"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/guide_login_30h"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/botton_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guide_login_30h" />
+
+        <TextView
+            android:id="@+id/label_login_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Entrar"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/botton_view"
+            app:layout_constraintStart_toStartOf="@id/botton_view"
+            app:layout_constraintTop_toTopOf="@id/botton_view" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_login_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="E-mail"
+            app:layout_constraintEnd_toEndOf="@id/botton_view"
+            app:layout_constraintStart_toStartOf="@id/botton_view"
+            app:layout_constraintTop_toBottomOf="@id/label_login_login">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_login_senha"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/edit_height"
+            android:layout_marginTop="16dp"
+            android:hint="Senha"
+            app:layout_constraintEnd_toEndOf="@id/til_login_email"
+            app:layout_constraintStart_toStartOf="@id/til_login_email"
+            app:layout_constraintTop_toBottomOf="@id/til_login_email">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_login_senha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberPassword"
+                android:textColor="@color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login_esqueci_senha"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:outlineProvider="none"
+            android:text="Esqueci minha senha"
+            android:textAllCaps="false"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/til_login_senha"
+            app:layout_constraintTop_toBottomOf="@id/til_login_senha" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login_entrar"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="16dp"
+            android:text="Entrar"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:icon="@drawable/ic_arrow_forward"
+            app:iconGravity="end"
+            app:layout_constraintEnd_toEndOf="@id/til_login_senha"
+            app:layout_constraintStart_toStartOf="@id/til_login_senha"
+            app:layout_constraintTop_toBottomOf="@id/button_login_esqueci_senha" />
+
+        <TextView
+            android:id="@+id/label_ou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Ou"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/line02"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@id/line01"
+            app:layout_constraintTop_toBottomOf="@id/button_login_entrar" />
+
+        <View
+            android:id="@+id/line01"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/label_ou"
+            app:layout_constraintEnd_toStartOf="@id/label_ou"
+            app:layout_constraintStart_toStartOf="@id/button_login_entrar"
+            app:layout_constraintTop_toTopOf="@id/label_ou" />
+
+        <View
+            android:id="@+id/line02"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/label_ou"
+            app:layout_constraintEnd_toEndOf="@id/button_login_entrar"
+            app:layout_constraintStart_toEndOf="@id/label_ou"
+            app:layout_constraintTop_toTopOf="@id/label_ou" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/button_login_cadastrar_se"
+            app:layout_constraintEnd_toEndOf="@id/button_login_entrar"
+            app:layout_constraintStart_toStartOf="@id/button_login_entrar"
+            app:layout_constraintTop_toBottomOf="@id/label_ou"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <TextView
+            android:id="@+id/label_login_cadastrar_se"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ainda não tem cadastro?"
+            app:layout_constraintBottom_toBottomOf="@id/button_login_cadastrar_se"
+            app:layout_constraintEnd_toStartOf="@id/button_login_cadastrar_se"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/button_login_cadastrar_se" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_login_cadastrar_se"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="Cadastrar-se"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/botton_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/label_login_cadastrar_se"
+            app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
