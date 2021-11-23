@@ -84,7 +84,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Toast.makeText(this, "Em desenvolvimento", Toast.LENGTH_SHORT).show()
             }
             buttonEntrar.id -> {
-                Toast.makeText(this, "Em desenvolvimento", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, HomeActivity::class.java))
+                finish()
             }
             buttonCadastrarSe.id -> {
                 startActivity(Intent(this, CadastroActivity::class.java))
