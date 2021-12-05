@@ -7,23 +7,23 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.fsdev.digitalfood.DB
 import br.com.fsdev.digitalfood.R
-import br.com.fsdev.digitalfood.adapters.RestaurantAdapter
+import br.com.fsdev.digitalfood.adapters.PlateAdapter
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class RestaurantDetailFragment : Fragment(R.layout.fragment_restaurant_detail) {
 
-    private lateinit var recyclerRestaurants: RecyclerView
+    private lateinit var recyclerPlates: RecyclerView
     private lateinit var manager: LinearLayoutManager
-    private val restaurants = DB.getRestaurants()
+    private val plates = DB.getPlates()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         manager = LinearLayoutManager(view.context)
-        recyclerRestaurants = view. findViewById(R.id.home_fragment_recycler_restaurants)
+        recyclerPlates = view.findViewById(R.id.restaurant_detail_recycler_plates)
 
-        recyclerRestaurants.layoutManager = manager
-        recyclerRestaurants.adapter = RestaurantAdapter(restaurants)
+        recyclerPlates.layoutManager = manager
+        recyclerPlates.adapter = PlateAdapter(plates)
+
     }
-
 
 }

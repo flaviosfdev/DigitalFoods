@@ -10,7 +10,7 @@ import android.widget.TextView
 import br.com.fsdev.digitalfood.R
 
 
-class Launcher03Fragment : Fragment() {
+class IntroContent03Fragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

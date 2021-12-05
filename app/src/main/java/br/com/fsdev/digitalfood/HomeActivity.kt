@@ -14,7 +14,7 @@ class HomeActivity : AppCompatActivity() {
 
         supportFragmentManager.commit {
             setReorderingAllowed(true)
-            add<HomeFragment>(R.id.home_fragment_container_view)
+            add<HomeFragment>(R.id.home_activity_fragment_container_view)
         }
     }
 

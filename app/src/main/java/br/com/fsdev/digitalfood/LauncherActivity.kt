@@ -1,5 +1,6 @@
 package br.com.fsdev.digitalfood
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -7,76 +8,81 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import br.com.fsdev.digitalfood.fragments.Launcher01Fragment
-import br.com.fsdev.digitalfood.fragments.Launcher02Fragment
-import br.com.fsdev.digitalfood.fragments.Launcher03Fragment
+import br.com.fsdev.digitalfood.fragments.IntroContent01Fragment
+import br.com.fsdev.digitalfood.fragments.IntroContent02Fragment
+import br.com.fsdev.digitalfood.fragments.IntroContent03Fragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import java.lang.IllegalArgumentException
 
 class LauncherActivity : AppCompatActivity() {
 
-    private lateinit var launcherTabs: TabLayout
-    private lateinit var launcherPager: ViewPager2
-    private lateinit var launcherButton: Button
+    private val viewPager: ViewPager2 by lazy { findViewById(R.id.viewpager_launcher) }
+    private val indicator: TabLayout by lazy { findViewById(R.id.indicator_launcher) }
+    private val buttonNext: Button by lazy { findViewById(R.id.button_next_launcher) }
 
-    private val launcher01Fragment = Launcher01Fragment()
-    private val launcher02Fragment = Launcher02Fragment()
-    private val launcher03Fragment = Launcher03Fragment()
+    private val launcher01Fragment = IntroContent01Fragment()
+    private val launcher02Fragment = IntroContent02Fragment()
+    private val launcher03Fragment = IntroContent03Fragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher)
 
-        initViews()
-        initPager()
-        initTabs(launcherTabs, launcherPager)
+        setupViewPager()
 
-    }
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
 
-    private fun initTabs(tabs: TabLayout, pager: ViewPager2) {
-
-        TabLayoutMediator(tabs, pager) { tab, position ->
-            when (position) {
-                0 -> {
-                    tab.text = "1"
-                }
-                1 -> {
-                    tab.text = "2"
-                }
-                2 -> {
-                    tab.text = "3"
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                buttonNext.text = "próximo"
+                when(position) {
+                    2 -> {
+                        buttonNext.text = "entendi"
+                    }
                 }
             }
+        })
 
+
+        buttonNext.setOnClickListener {
+            if (buttonNext.text.toString() == "entendi") {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                viewPager.currentItem ++
+            }
         }
+    }
+
+    private fun setupViewPager() {
+
+        val listFragments = listOf(IntroContent01Fragment(),IntroContent02Fragment(), IntroContent03Fragment())
+
+        viewPager.adapter = IntroAdapter(
+            this, listFragments
+        )
+
+        TabLayoutMediator(indicator, viewPager) {_, _ -> }.attach()
 
     }
 
-    private fun initPager() {
+    class IntroAdapter(
+        fragmentManager: FragmentActivity,
+        private val views: List<Fragment>
+    ) : FragmentStateAdapter(fragmentManager) {
 
-        launcherPager.adapter = PagerLauncherAdapter(this)
-
-    }
-
-    private fun initViews() {
-        launcherTabs = findViewById(R.id.launcher_tablayout)
-        launcherPager = findViewById(R.id.pager_launcher)
-        launcherButton = findViewById(R.id.launcher_button_proximo)
-    }
-
-
-
-    private inner class PagerLauncherAdapter(fragmentActivity: FragmentActivity)
-        : FragmentStateAdapter(fragmentActivity) {
-
-        override fun getItemCount(): Int = 3
+        override fun getItemCount(): Int = views.size
 
         override fun createFragment(position: Int): Fragment {
-            return when (position) {
-                0 -> { launcher01Fragment }
-                1 -> { launcher02Fragment }
-                else -> { launcher03Fragment }
+
+            return if (views.isEmpty()) {
+                throw IllegalArgumentException("The view's list is empty")
+            } else {
+                views[position]
             }
+
         }
     }
 

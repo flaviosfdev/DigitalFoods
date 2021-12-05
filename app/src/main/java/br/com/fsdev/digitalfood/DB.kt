@@ -2,10 +2,29 @@ package br.com.fsdev.digitalfood
 
 import br.com.fsdev.digitalfood.models.Banner
 import br.com.fsdev.digitalfood.models.Categoria
+import br.com.fsdev.digitalfood.models.Plate
+import br.com.fsdev.digitalfood.models.Restaurant
 
 class DB {
 
     companion object {
+
+        fun getRestaurants() = List(10){
+            Restaurant(
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnG9NgjPo1pSUM0_Cc1gNIiGWY-oy-h7U2i9i1AlSR_6VGayme8vrv1VCMZbqsq54T6CQ&usqp=CAU",
+                "Outback Morumbi Shopping",
+                "Avenida Roque Petroni Júnior, 1089 - Jardim das Acácias - CEP: 04707-900 - São Paulo – SP",
+                "Fecha às 22h"
+            )
+        }
+
+        fun getPlates() = List(10){
+            Plate(
+                "https://www.delonghi.com/Global/recipes/multifry/97.jpg",
+                "Pizza",
+                "Vários sabores de pizza"
+            )
+        }
 
         fun getBanners(): List<Banner> {
             return listOf(

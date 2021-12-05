@@ -7,14 +7,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import android.widget.VideoView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainerView
-import androidx.fragment.app.add
-import androidx.fragment.app.commit
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var videoView: VideoView
     private lateinit var path: String
@@ -28,7 +24,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         initViews()
         initListeners()

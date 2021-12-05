@@ -4,17 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/botton_view.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/default_dot.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/dot_launcher_default.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/dot_launcher_selected.xml" value="0.2203125" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/foreground_img_categoria.xml" value="0.2046875" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/img_alpha_mask.xml" value="0.2203125" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/img_gradent.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/restaurant_background.xml" value="0.121875" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/selected_dot.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/state_list_launcher.xml" value="0.2203125" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/drawable/tab_state_launcher.xml" value="0.2203125" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/activity_cadastro.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
-        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/activity_launcher.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/activity_launcher.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_cadastro.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_cadastro_restaurante.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_cadastro_usuario.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_launcher.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_launcher01.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_launcher02.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_launcher03.xml" value="0.20416666666666666" />
@@ -22,6 +30,8 @@
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/fragment_restaurante_list.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/item_banner.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/item_categoria.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/item_plate.xml" value="0.20416666666666666" />
+        <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/item_restaurant.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/layout/launcher_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/AndroidStudioProjects/digital_house/DigitalFood/app/src/main/res/mipmap-anydpi-v26/icon_button_continue_google.xml" value="0.1125" />
       </map>

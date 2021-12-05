@@ -10,7 +10,7 @@ import android.widget.TextView
 import br.com.fsdev.digitalfood.R
 
 
-class Launcher01Fragment : Fragment() {
+class IntroContent02Fragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,13 +25,13 @@ class Launcher01Fragment : Fragment() {
             else -> {
 
                 view.findViewById<ImageView>(R.id.launcher_frag_img)
-                    .setImageDrawable(resources.getDrawable(R.drawable.ic_ilustra_1))
+                    .setImageDrawable(resources.getDrawable(R.drawable.ic_ilustra_2))
 
                 view.findViewById<TextView>(R.id.launcher_frag_titulo)
-                    .text = "Os melhores restaurantes"
+                    .text = "Chefs ilustres"
 
                 view.findViewById<TextView>(R.id.launcher_frag_subtitulo)
-                    .text = "Coma nos melhores restaurantes da cidade."
+                    .text = "Experimente os melhores pratos, feitos por chefs notáveis."
 
             }
 
@@ -39,8 +39,6 @@ class Launcher01Fragment : Fragment() {
         }
 
         return view
-
-
     }
 
 }

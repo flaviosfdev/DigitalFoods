@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_restaurant"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_guide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_guide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <ImageView
+        android:id="@+id/item_restaurant_image"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        app:circularflow_radiusInDP="20dp 10dp"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="@id/end_guide"
+        app:layout_constraintStart_toStartOf="@id/start_guide"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_restaurant_name"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@id/item_restaurant_image"
+        app:layout_constraintStart_toStartOf="@id/item_restaurant_image"
+        app:layout_constraintTop_toBottomOf="@id/item_restaurant_image"
+        tools:text="Restaurant name" />
+
+    <TextView
+        android:id="@+id/item_restaurant_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/item_restaurant_name"
+        app:layout_constraintStart_toStartOf="@id/item_restaurant_name"
+        app:layout_constraintTop_toBottomOf="@id/item_restaurant_name"
+        tools:text="Restaurant address" />
+
+    <TextView
+        android:id="@+id/item_restaurant_shutdown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/item_restaurant_address"
+        app:layout_constraintStart_toStartOf="@id/item_restaurant_address"
+        app:layout_constraintTop_toBottomOf="@id/item_restaurant_address"
+        tools:text="Restaurant closed down" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end_guide"
+        app:layout_constraintStart_toStartOf="@id/start_guide"
+        app:layout_constraintTop_toBottomOf="@id/item_restaurant_shutdown" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

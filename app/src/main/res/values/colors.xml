@@ -7,11 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="black_mask">#80000000</color>
-    <color name="gray">#FFcccccc</color>
+    <color name="gray">#DDDDDD</color>
     <color name="white">#FFFFFFFF</color>
     <color name="brown">#231709</color>
-    <color name="red">#C80000</color>
+    <color name="red">#D43E3A</color>
     <color name="red_dark">#7A0000</color>
     <color name="blue_google">#4385F5</color>
-    <color name="red_button">#D43E3A</color>
 </resources>
