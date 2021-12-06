@@ -21,29 +21,11 @@ class LauncherActivity : AppCompatActivity() {
     private val indicator: TabLayout by lazy { findViewById(R.id.indicator_launcher) }
     private val buttonNext: Button by lazy { findViewById(R.id.button_next_launcher) }
 
-    private val launcher01Fragment = IntroContent01Fragment()
-    private val launcher02Fragment = IntroContent02Fragment()
-    private val launcher03Fragment = IntroContent03Fragment()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher)
 
         setupViewPager()
-
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                buttonNext.text = "próximo"
-                when(position) {
-                    2 -> {
-                        buttonNext.text = "entendi"
-                    }
-                }
-            }
-        })
-
 
         buttonNext.setOnClickListener {
             if (buttonNext.text.toString() == "entendi") {
@@ -51,20 +33,35 @@ class LauncherActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } else {
-                viewPager.currentItem ++
+                viewPager.currentItem++
             }
         }
     }
 
     private fun setupViewPager() {
 
-        val listFragments = listOf(IntroContent01Fragment(),IntroContent02Fragment(), IntroContent03Fragment())
-
-        viewPager.adapter = IntroAdapter(
-            this, listFragments
+        val listFragments = listOf(
+            IntroContent01Fragment(),
+            IntroContent02Fragment(),
+            IntroContent03Fragment()
         )
 
-        TabLayoutMediator(indicator, viewPager) {_, _ -> }.attach()
+        viewPager.adapter = IntroAdapter(this, listFragments)
+        TabLayoutMediator(indicator, viewPager) { _, _ -> }.attach()
+
+        viewPager.isUserInputEnabled = false
+
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                buttonNext.text = "próximo"
+                when (position) {
+                    2 -> {
+                        buttonNext.text = "entendi"
+                    }
+                }
+            }
+        })
 
     }
 

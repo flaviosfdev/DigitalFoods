@@ -13,6 +13,10 @@
         android:theme="@style/Theme.DigitalFood">
 
         <activity
+            android:name=".RestaurantDetailActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".LauncherActivity"
             android:exported="true">
             <intent-filter>
@@ -20,12 +24,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
         <activity
             android:name=".HomeActivity"
-            android:exported="false" />
+            android:exported="true"/>
 
         <activity
             android:name=".CadastroActivity"
@@ -33,9 +36,7 @@
 
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-        </activity>
-
+            android:exported="true" />
     </application>
 
 </manifest>
