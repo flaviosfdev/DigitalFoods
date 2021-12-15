@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import android.widget.VideoView
 import com.google.android.material.button.MaterialButton
@@ -12,37 +13,28 @@ import com.google.android.material.textfield.TextInputEditText
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
-    private lateinit var videoView: VideoView
+    private val videoView: VideoView by lazy { findViewById(R.id.video_view) }
     private lateinit var path: String
-    private lateinit var uri: Uri
 
-    private lateinit var editLoginEmail: TextInputEditText
-    private lateinit var editLoginSenha: TextInputEditText
-    private lateinit var buttonEsqueciSenha: MaterialButton
-    private lateinit var buttonEntrar: MaterialButton
-    private lateinit var buttonCadastrarSe: MaterialButton
+    private lateinit var uri: Uri
+    private val editLoginEmail: TextInputEditText by lazy { findViewById(R.id.edit_login_email) }
+    private val editLoginSenha: TextInputEditText by lazy { findViewById(R.id.edit_login_senha) }
+    private val textViewEsqueciSenha: TextView by lazy { findViewById(R.id.text_view_login_esqueci_senha) }
+    private val buttonEntrar: MaterialButton by lazy { findViewById(R.id.button_login_entrar) }
+    private val buttonCadastrarSe: MaterialButton by lazy { findViewById(R.id.button_login_cadastrar_se) }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        initViews()
         initListeners()
         playVideo()
 
     }
 
-    private fun initViews() {
-        videoView = findViewById(R.id.video_view)
-        editLoginEmail = findViewById(R.id.edit_login_email)
-        editLoginSenha = findViewById(R.id.edit_login_senha)
-        buttonEsqueciSenha = findViewById(R.id.button_login_esqueci_senha)
-        buttonEntrar = findViewById(R.id.button_login_entrar)
-        buttonCadastrarSe = findViewById(R.id.button_login_cadastrar_se)
-    }
-
     private fun initListeners() {
-        buttonEsqueciSenha.setOnClickListener(this)
+        textViewEsqueciSenha.setOnClickListener(this)
         buttonEntrar.setOnClickListener(this)
         buttonCadastrarSe.setOnClickListener(this)
     }
@@ -76,7 +68,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
 
         when (v.id) {
-            buttonEsqueciSenha.id -> {
+            textViewEsqueciSenha.id -> {
                 Toast.makeText(this, "Em desenvolvimento", Toast.LENGTH_SHORT).show()
             }
             buttonEntrar.id -> {

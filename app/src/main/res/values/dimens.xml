@@ -3,5 +3,6 @@
 
     <dimen name="button_height">56dp</dimen>
     <dimen name="edit_height">56dp</dimen>
+    <dimen name="padding_screen">16dp</dimen>
 
 </resources>
